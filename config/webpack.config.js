@@ -343,7 +343,10 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
-                  path.join(__dirname, '../babel-plugin-html-stripper'),
+                  [path.join(__dirname, '../babel-plugin-html-stripper'), {
+                    "HTML_ENV": "data-mobile", // remove mobile code for generating desktop builds
+                    "FUNCTION_ENV": "_mobile"
+                  }],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
