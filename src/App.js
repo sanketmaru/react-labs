@@ -1,25 +1,15 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 export default class App extends Component {
-  componentDidMount() {
-    // fetch(`${SEARCH}?q=preact`)
-    //   .then(r => r.json())
-    //   .then(json => {
-    //     this.setState({
-    //       results: (json && json.items) || []
-    //     });
-    //   });
-  }
 
   test_mobile() {
-    console.log("test method for strip");
+    console.log("Bucky");
   }
 
   handleClick_mobile() {
     console.log(
-      "Mobile handle Click, this callback should not be present in desktop build"
+      "Black Panther"
     );
   }
 
@@ -27,7 +17,7 @@ export default class App extends Component {
     console.log("Desktop handle Click");
   }
 
-  render(props, { results = [] }) {
+  render() {
     return (
       <div>
         <h1>Example</h1>

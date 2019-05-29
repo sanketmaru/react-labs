@@ -1,6 +1,6 @@
-'use strict'; Object.defineProperty(exports, "__esModule", {value: true});
-// export default declare((api, options) => {
-// });
+'use strict';
+Object.defineProperty(exports, "__esModule", {value: true});
+
 exports.default = function(babel) {
   const { types: t } = babel;
   
