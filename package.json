@@ -127,5 +127,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-mobile-optimizer-react": "^1.0.0"
   }
 }
