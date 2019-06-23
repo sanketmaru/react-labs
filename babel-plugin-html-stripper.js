@@ -8,15 +8,19 @@ exports.default = function(babel, options) {
     return {
       name: "ast-transform", // not required
       visitor: {
-        ClassMethod(path) {
-          if (path.node.key.name.endsWith(functionEnv)) {
-            path.remove();
-          }
-        },
-        JSXElement(path) {
-          path.node.openingElement.attributes.forEach(ele => {
-            if (ele.name.name === htmlEnv)
-              path.remove();
+        Program(programPath) {
+          programPath.traverse({
+            ClassMethod(path) {
+              if (path.node.key.name.endsWith(functionEnv)) {
+                path.remove();
+              }
+            },
+            JSXElement(path) {
+              path.node.openingElement.attributes.forEach(ele => {
+                if (ele.name.name === htmlEnv)
+                  path.remove();
+              });
+            }
           });
         }
       }
